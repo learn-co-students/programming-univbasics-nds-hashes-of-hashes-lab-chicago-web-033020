@@ -13,18 +13,18 @@
 #     }
 #   }
 # }
-# 
+#
 # PORTION_2 = {
 #   label: "Order"
 # }
-# 
+#
 # PORTION_3 = {
 #   label: "Family",
 #   sub_category: {
 #     label: "Genus",
 #   }
 # }
-# 
+#
 # PORTION_4 = {
 #   label: "Species",
 #   sub_category: nil
@@ -41,5 +41,33 @@ def naming_system
   #  Species
   # So, if we have the "Kingdom" node we should be able to "tunnel" into the
   # HoH all the way to Species!
-
+  bioLife =
+  {#  Kingdom
+  label: "Kingdom",
+  sub_category:
+  {#  Phylum
+    label: "Phylum",
+    sub_category:
+    {  #  Class
+      label: "Class",
+      sub_category:
+      {  #  Order
+        label: "Order",
+        sub_category:
+        {#  Family
+          label: "Family",
+          sub_category:
+          {  #  Genus
+            label: "Genus",
+            sub_category:
+            {  #  Species
+              label: "Species",
+              sub_category:nil #这句可写可不写，因为它是nil
+            }
+          }
+        }
+      }
+    }
+  }
+}
 end
